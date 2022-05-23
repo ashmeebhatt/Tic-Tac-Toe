@@ -1,0 +1,12 @@
+This TicTacToe game uses the MVC pattern which is conformed by the classes GameModel, GameView and GameController. The program is driven by the file App.java, which contains the main() function
+
+All the game rules are implemented inside the class GameController. Inside this class, the players are stored, the moves are counted, the restrictions are applied (for example, a player cannot play in a cell where there is already a movement, they can only play in empty cells), the class checks if there is a winner after each movement, etc. 
+
+Inside the the class GameView, the visual representation of the game is handled. This game is in charge of displaying the game window, creating the grid, buttons, etc. This class is also in charge of displaying any message (like player's turn), display if there is a winner or if there is a tie, etc.
+
+Inside the class GameModel, the information about each player is stored. This class will store the player id, the token (X or O) and the number of moves played by each one.
+
+The relations between the classes is that, the GameController uses the GameModel class and the GameView class. GameController sends information to GameView in order to tell it that it needs to display info, update the window, etc. GameController uses GameModel because it stores the players inside a list.
+
+GameView also uses GameController, so the connection between both clases is bidirectional. This is because GameView needs to know the status of the game (which is stored inside GameController) in order to display the correct messages. However, GameView does not uses GameModel.
+
